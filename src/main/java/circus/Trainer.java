@@ -20,16 +20,7 @@ public class Trainer {
         getToSpeak(d2);
 
         train(new Duck());
-        //train(new Parrot());
-        Bird b1 = new Parrot();
-        Parrot p1 = (Parrot) b;
-        p1.speak();
-
-        // why they all say quack quack cause the underlying class is still duck. It recognizes that the underlying object
-        // is still a duck (casting/polymorphism).
-
-        // you can do downcasting, but there are caveats. Even if we cast the type from duck to animal and run bird/duck
-        // codes, they'll still run them as duck is still the underlying code.
+        // train(new animal.Parrot());
     }
 
     private static void getToSpeak(Animal animal) {
@@ -37,7 +28,9 @@ public class Trainer {
     }
 
     private static void train(Bird bird) {
-        Duck d = (Duck) bird;
-        d.swim();
+        if (bird instanceof Duck) {
+            Duck d = (Duck) bird;
+            d.swim();
+        }
     }
 }
