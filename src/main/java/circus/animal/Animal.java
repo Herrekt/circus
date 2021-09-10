@@ -1,12 +1,9 @@
 package circus.animal;
 
-<<<<<<< HEAD
-public abstract class Animal {
-=======
 import circus.Asset;
 
 public abstract class Animal implements Asset {
->>>>>>> origin/improved
 
+    public String name;
     public abstract String speak();
 }
